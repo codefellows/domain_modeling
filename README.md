@@ -75,11 +75,11 @@ console.log(parkourFail.generateRandom(1, 5));
 console.log(corgiFail.generateRandom(1, 5));
 ```
 
-As you can see, methods can be added to a constructor function's **prototype**. Think of the prototype as an object's stunt double. Whenever a scene is too dangerous, you can substitute in the prototype to do the work while the object takes all the glory.
+As you can see, methods can be added to a constructor function's **prototype**. Think of the prototype as an object's stunt double. Whenever a scene is too dangerous, you can substitute in the prototype to do the work while the object takes all the glory. More on how that works below.
 
 `EpicFailVideo`'s prototype is given a `generateRandom` method which is assigned a function with two parameters called `min` and `max`. The function uses both [Math.floor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) and [Math.random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FMath%2Frandom) to calculate and return a random integer between `min` and `max`.
 
-So calling `generateRandom(1, 5)` on both `parkourFail` and `corgiFail` will return a random number between 1 and 5 each time.
+When `parkourFail` is asked to run the `generateRandom()` method, it searches through all of its own methods. When it doesn't find the `generateRandom()` method there, `parkourFail` then searches through all of the methods on its `prototype` object. When it finds the `generateRandom()` method on its `prototype` object, `parkourFail` calls the method, passing in `1` and `5` as the arguments. The `generateRandom(1, 5)` method runs and returns a random number between 1 and 5. The exact same process happens for `corgiFail` too.
 
 ![](https://i.imgur.com/aPEgyN2.png)
 
