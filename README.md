@@ -81,6 +81,8 @@ As you can see, methods can be added to a constructor function's **prototype**. 
 
 When `parkourFail` is asked to run the `generateRandom()` method, it searches through all of its own methods. When it doesn't find the `generateRandom()` method there, `parkourFail` then searches through all of the methods on its `prototype` object. When it finds the `generateRandom()` method on its `prototype` object, `parkourFail` calls the method, passing in `1` and `5` as the arguments. The `generateRandom(1, 5)` method runs and returns a random number between 1 and 5. The exact same process happens for `corgiFail` too.
 
+While it certainly takes longer to locate a method on the prototype object, this technique is an established best practice in JavaScript. When a prototype is shared between two or more objects, like it is for `parkourFail` and `corgiFail`, those objects execute the same code when the `generateRandom()` method is called. And shared code means a running program consumes less memory which is important for devices like smart phones and tablets.
+
 ![](https://i.imgur.com/aPEgyN2.png)
 
 With a random number generator in place, you have all pieces you need to start modeling the popularity of epic fail videos.
