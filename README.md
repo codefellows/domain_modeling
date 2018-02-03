@@ -48,7 +48,7 @@ Finally, the two newly created objects are logged to the console.
 
 ![](https://i.imgur.com/G2bPElF.png)
 
-This is **object-oriented programming** in JavaScript at it's most fundamental level.
+This is **object-oriented programming** in JavaScript at its most fundamental level.
 
 1. The `new` keyword instantiates (i.e. creates) an object.
 1. The constructor function initializes properties inside that object using the `this` variable.
